@@ -55,7 +55,10 @@ button {
     font-family: Georgia, serif;
 }
 
-/* CORAZONES FLOTANDO */
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
 
 .corazones {
     position: fixed;
@@ -73,6 +76,7 @@ button {
 }
 
 @keyframes subir {
+
     from {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
@@ -88,7 +92,78 @@ button {
     }
 }
 
-/* PORTADA */
+
+/* =========================
+   PÉTALOS
+========================= */
+
+.petalo {
+    position: fixed;
+    top: -50px;
+    pointer-events: none;
+    z-index: 9;
+    font-size: 22px;
+    animation: caer linear infinite;
+}
+
+@keyframes caer {
+
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .9;
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(35px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(-35px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   DESTELLOS
+========================= */
+
+.destellos {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 8;
+}
+
+.destello {
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    animation: brillar 3s ease-in-out infinite;
+}
+
+@keyframes brillar {
+
+    0%, 100% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    50% {
+        opacity: .9;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   PORTADA
+========================= */
 
 .inicio {
     background:
@@ -103,6 +178,7 @@ button {
 }
 
 @keyframes latido {
+
     0%,100% {
         transform: scale(1);
     }
@@ -134,7 +210,10 @@ button {
     transform: scale(.95);
 }
 
-/* FOTOS */
+
+/* =========================
+   FOTOS
+========================= */
 
 .foto {
     width: min(88vw, 430px);
@@ -152,7 +231,10 @@ button {
     transform: rotate(3deg);
 }
 
-/* MENSAJE */
+
+/* =========================
+   MENSAJE
+========================= */
 
 .mensaje {
     background: linear-gradient(#210914, #4a1429);
@@ -164,7 +246,10 @@ button {
     color: #ffadc6;
 }
 
-/* TARJETAS */
+
+/* =========================
+   TARJETAS
+========================= */
 
 .tarjetas {
     width: min(650px, 100%);
@@ -193,13 +278,19 @@ button {
     background: rgba(255,79,134,.25);
 }
 
-/* EXTRA */
+
+/* =========================
+   EXTRA
+========================= */
 
 .seccion-amor {
     background: radial-gradient(circle, #46152c, #13070d);
 }
 
-/* SOBRES */
+
+/* =========================
+   SOBRES
+========================= */
 
 .sobre {
     width: min(330px, 90vw);
@@ -229,7 +320,10 @@ button {
     display: block;
 }
 
-/* DISTANCIA */
+
+/* =========================
+   DISTANCIA
+========================= */
 
 .distancia {
     background:
@@ -242,13 +336,19 @@ button {
     animation: latido 1.8s infinite;
 }
 
-/* FUTURO */
+
+/* =========================
+   FUTURO
+========================= */
 
 .futuro {
     background: linear-gradient(#14070d, #381123);
 }
 
-/* FINAL */
+
+/* =========================
+   FINAL
+========================= */
 
 .final {
     background:
@@ -258,6 +358,11 @@ button {
 .final .corazon-grande {
     font-size: 110px;
 }
+
+
+/* =========================
+   CELULAR
+========================= */
 
 @media(max-width:600px) {
 
@@ -278,19 +383,83 @@ button {
 
 <body>
 
-<!-- CORAZONES -->
+
+<!-- =========================
+     CORAZONES
+========================= -->
+
 <div class="corazones">
 
-    <div class="corazon-flotante" style="left:10%; animation-delay:0s;">❤️</div>
-    <div class="corazon-flotante" style="left:30%; animation-delay:2s;">💗</div>
-    <div class="corazon-flotante" style="left:50%; animation-delay:4s;">💕</div>
-    <div class="corazon-flotante" style="left:70%; animation-delay:1s;">❤️</div>
-    <div class="corazon-flotante" style="left:90%; animation-delay:3s;">💗</div>
+    <div class="corazon-flotante" style="left:5%; animation-delay:0s; font-size:18px;">❤️</div>
+
+    <div class="corazon-flotante" style="left:18%; animation-delay:2s; font-size:25px;">💗</div>
+
+    <div class="corazon-flotante" style="left:32%; animation-delay:4s; font-size:16px;">💕</div>
+
+    <div class="corazon-flotante" style="left:47%; animation-delay:1s; font-size:22px;">❤️</div>
+
+    <div class="corazon-flotante" style="left:63%; animation-delay:3s; font-size:17px;">💗</div>
+
+    <div class="corazon-flotante" style="left:78%; animation-delay:5s; font-size:25px;">💕</div>
+
+    <div class="corazon-flotante" style="left:92%; animation-delay:2.5s; font-size:19px;">❤️</div>
 
 </div>
 
 
-<!-- PORTADA -->
+<!-- =========================
+     PÉTALOS
+========================= -->
+
+<div class="petalos">
+
+    <div class="petalo" style="left:5%; animation-duration:10s; animation-delay:0s;">🌹</div>
+
+    <div class="petalo" style="left:17%; animation-duration:13s; animation-delay:3s;">🌸</div>
+
+    <div class="petalo" style="left:29%; animation-duration:11s; animation-delay:5s;">🌹</div>
+
+    <div class="petalo" style="left:42%; animation-duration:14s; animation-delay:1s;">🌸</div>
+
+    <div class="petalo" style="left:55%; animation-duration:12s; animation-delay:6s;">🌹</div>
+
+    <div class="petalo" style="left:68%; animation-duration:10s; animation-delay:2s;">🌸</div>
+
+    <div class="petalo" style="left:80%; animation-duration:13s; animation-delay:4s;">🌹</div>
+
+    <div class="petalo" style="left:94%; animation-duration:11s; animation-delay:7s;">🌸</div>
+
+</div>
+
+
+<!-- =========================
+     DESTELLOS
+========================= -->
+
+<div class="destellos">
+
+    <div class="destello" style="left:8%; top:18%; animation-delay:0s;">✦</div>
+
+    <div class="destello" style="left:25%; top:38%; animation-delay:1s;">✨</div>
+
+    <div class="destello" style="left:48%; top:15%; animation-delay:2s;">✦</div>
+
+    <div class="destello" style="left:72%; top:30%; animation-delay:.5s;">✨</div>
+
+    <div class="destello" style="left:88%; top:55%; animation-delay:1.5s;">✦</div>
+
+    <div class="destello" style="left:15%; top:72%; animation-delay:2.5s;">✨</div>
+
+    <div class="destello" style="left:58%; top:80%; animation-delay:1.2s;">✦</div>
+
+    <div class="destello" style="left:82%; top:85%; animation-delay:3s;">✨</div>
+
+</div>
+
+
+<!-- =========================
+     PORTADA
+========================= -->
 
 <section class="inicio">
 
@@ -307,45 +476,60 @@ button {
 
     <button class="boton"
         onclick="document.getElementById('mensaje').scrollIntoView({behavior:'smooth'})">
+
         💗 Abrir mi regalo
+
     </button>
 
 </section>
 
 
-<!-- MENSAJE -->
+<!-- =========================
+     MENSAJE
+========================= -->
 
 <section class="mensaje" id="mensaje">
 
     <img src="IMG_0517.jpeg" class="foto foto-inclinada">
 
     <p>
+
         Feliz cumpleaños, mi niña linda. ❤️
+
         <br><br>
 
         Me pone muy feliz tenerte otro añito más conmigo.
         🥰 Te amo muchísimo y nunca me cansaré de recordártelo:
         eres el amor de mi vida. 🥰🥰
+
         <br><br>
 
         Te adoro con todo mi corazón. 💗
         Espero que ya pronto podamos estar cerquita
         para llenarte de besitos esa hermosa carita. 😘
+
         <br><br>
 
         Siempre serás mi linda princesa. ❤️
+
     </p>
 
     <div class="firma">
+
         Te amo muchísimo, Dayi ❤️
+
         <br>
+
         — Isaquito
+
     </div>
 
 </section>
 
 
-<!-- COSAS QUE AMO -->
+<!-- =========================
+     COSAS QUE AMO
+========================= -->
 
 <section class="seccion-amor">
 
@@ -355,28 +539,46 @@ button {
 
     <div class="tarjetas">
 
-        <div class="tarjeta">Tus bellos ojitos, tu sonrisa, toda tu hermosa carita 🥰🥰</div>
+        <div class="tarjeta">
+            Tus bellos ojitos, tu sonrisa, toda tu hermosa carita 🥰🥰
+        </div>
 
-        <div class="tarjeta">Tu voz y tu risa como me encantan 💗</div>
+        <div class="tarjeta">
+            Tu voz y tu risa como me encantan 💗
+        </div>
 
-        <div class="tarjeta">Lo maravilloso e increíble que eres 💗</div>
+        <div class="tarjeta">
+            Lo maravilloso e increíble que eres 💗
+        </div>
 
-        <div class="tarjeta">La forma en la que me amas 💕</div>
+        <div class="tarjeta">
+            La forma en la que me amas 💕
+        </div>
 
-        <div class="tarjeta">El como me haces sentir ❤️</div>
+        <div class="tarjeta">
+            El como me haces sentir ❤️
+        </div>
 
-        <div class="tarjeta">Porque simplemente eres perfecta 🤍</div>
+        <div class="tarjeta">
+            Porque simplemente eres perfecta 🤍
+        </div>
 
-        <div class="tarjeta">Cada momento contigo 🥰</div>
+        <div class="tarjeta">
+            Cada momento contigo 🥰
+        </div>
 
-        <div class="tarjeta">Simplemente tu ❤️</div>
+        <div class="tarjeta">
+            Simplemente tu ❤️
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- PARA CUANDO ME EXTRAÑES -->
+<!-- =========================
+     PARA CUANDO ME EXTRAÑES
+========================= -->
 
 <section>
 
@@ -388,32 +590,41 @@ button {
         Abre uno cuando necesites un poquito de amor de Isaquito. ❤️
     </p>
 
+
     <div class="sobre" onclick="this.classList.toggle('abierto')">
 
         💌 Ábreme cuando me extrañes
 
         <div class="mensaje-secreto">
+
             Solo imagina que estamos juntitos y que te estoy abrazando muy fuerte y dándote mutos besitos, piensa en que no importa que tan lejos estemos siempre viviré en tu corazón y tu en el mío ❤️🥰
+
         </div>
 
     </div>
+
 
     <div class="sobre" onclick="this.classList.toggle('abierto')">
 
         💋 Ábreme cuando quieras un beso
 
         <div class="mensaje-secreto">
+
             muak muak muak 😘😘😘 son poquitos de los muchos besitos que te daré cuando estemos juntitos.
+
         </div>
 
     </div>
+
 
     <div class="sobre" onclick="this.classList.toggle('abierto')">
 
         🫂 Ábreme cuando quieras un abracito
 
         <div class="mensaje-secreto">
+
             te mando muchisisisimos abrazos a la distancia muamua ❤️
+
         </div>
 
     </div>
@@ -421,7 +632,9 @@ button {
 </section>
 
 
-<!-- DISTANCIA -->
+<!-- =========================
+     DISTANCIA
+========================= -->
 
 <section class="distancia">
 
@@ -434,18 +647,23 @@ button {
     <img src="IMG_0513.jpeg" class="foto foto-inclinada">
 
     <p>
+
         Puede haber muchos kilómetros entre nosotros,
         pero eso nunca va a cambiar lo mucho que te amo. ❤️
+
         <br><br>
 
         Espero ya pronto podamos estar cerquita
         para llenarte de besitos esa hermosa carita. 😘
+
     </p>
 
 </section>
 
 
-<!-- FUTURO -->
+<!-- =========================
+     FUTURO
+========================= -->
 
 <section class="futuro">
 
@@ -455,24 +673,38 @@ button {
 
     <div class="tarjetas">
 
-        <div class="tarjeta">Viajar por todo el mundo juntos</div>
+        <div class="tarjeta">
+            Viajar por todo el mundo juntos
+        </div>
 
-        <div class="tarjeta">Ir al cine y comer de todo :)</div>
+        <div class="tarjeta">
+            Ir al cine y comer de todo :)
+        </div>
 
-        <div class="tarjeta">Ir a lugares bonitos para tomarnos fotos 🥰</div>
+        <div class="tarjeta">
+            Ir a lugares bonitos para tomarnos fotos 🥰
+        </div>
 
-        <div class="tarjeta">Ir a por alitas, luego por hamburguesas, y después kfc y lo que quieras yo te invito bb 😘</div>
+        <div class="tarjeta">
+            Ir a por alitas, luego por hamburguesas, y después kfc y lo que quieras yo te invito bb 😘
+        </div>
 
-        <div class="tarjeta">Muchas noches de kdramas</div>
+        <div class="tarjeta">
+            Muchas noches de kdramas
+        </div>
 
-        <div class="tarjeta">Vivir para siempre a tu lado ❤️</div>
+        <div class="tarjeta">
+            Vivir para siempre a tu lado ❤️
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
@@ -483,29 +715,40 @@ button {
     </div>
 
     <h2>
+
         Siempre serás<br>
         mi linda princesa
+
     </h2>
 
     <p>
+
         Gracias por existir y por formar parte de mi vida.
+
         <br><br>
 
         Te amo muchísimo más de lo que estas palabras
         pueden explicar.
+
         <br><br>
 
         Espero que este pequeño regalo te recuerde
         lo especial que eres para mí.
+
     </p>
 
     <div class="firma">
+
         Con todo mi amor,
+
         <br>
+
         Isaquito ❤️
+
     </div>
 
 </section>
+
 
 </body>
 </html>
