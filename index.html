@@ -6,6 +6,7 @@
 <title>Para Dayi ❤️</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -142,14 +143,14 @@ button {
 
 .destello {
     position: absolute;
-    color: #fff;
+    color: white;
     font-size: 18px;
     animation: brillar 3s ease-in-out infinite;
 }
 
 @keyframes brillar {
 
-    0%, 100% {
+    0%,100% {
         opacity: 0;
         transform: scale(.5);
     }
@@ -203,7 +204,7 @@ button {
     font-size: 18px;
     box-shadow: 0 0 25px rgba(255,79,134,.5);
     cursor: pointer;
-    transition: transform .3s;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .boton:active {
@@ -219,46 +220,42 @@ button {
     width: min(88vw, 430px);
     border-radius: 25px;
     margin: 25px 0;
-    box-shadow: 0 15px 45px rgba(0,0,0,.55);
-    border: 4px solid rgba(255,255,255,.15);
+    border: 4px solid rgba(255,255,255,.18);
 
-    /* ANIMACIÓN */
-    opacity: 0;
-    transform: translateY(60px) scale(.92);
+    /* Siempre visibles */
+    opacity: 1;
+
+    /* Estado inicial de animación */
+    transform: translateY(70px) scale(.90);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55);
+
     transition:
-        opacity 1s ease,
-        transform 1s ease,
+        transform 1s cubic-bezier(.22,1,.36,1),
         box-shadow 1s ease;
 }
 
-/* Cuando la foto aparece en pantalla */
+
+/* Cuando aparece */
 
 .foto.visible {
-    opacity: 1;
     transform: translateY(0) scale(1);
+
     box-shadow:
         0 15px 45px rgba(0,0,0,.55),
-        0 0 25px rgba(255,150,190,.25);
+        0 0 35px rgba(255,120,180,.35);
 }
 
-/* Movimiento suave después de aparecer */
 
-.foto.visible {
-    animation: respirarFoto 4s ease-in-out infinite;
+/* Brillo que recorre la fotografía */
+
+.foto.visible::after {
+    content: "";
 }
 
-@keyframes respirarFoto {
 
-    0%,100% {
-        scale: 1;
-    }
-
-    50% {
-        scale: 1.025;
-    }
-}
-
-/* Mantener inclinaciones */
+/* Inclinaciones */
 
 .foto-inclinada {
     rotate: -3deg;
@@ -307,12 +304,20 @@ button {
     align-items: center;
     font-size: 18px;
     backdrop-filter: blur(8px);
-    transition: transform .3s, background .3s;
+    transition:
+        transform .3s,
+        background .3s,
+        box-shadow .3s;
 }
 
 .tarjeta:active {
     transform: scale(.95);
     background: rgba(255,79,134,.25);
+}
+
+.tarjeta:hover {
+    box-shadow:
+        0 0 20px rgba(255,120,180,.25);
 }
 
 
@@ -339,11 +344,16 @@ button {
     font-size: 20px;
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    transition: transform .3s;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .sobre:active {
     transform: scale(.95);
+}
+
+.sobre:hover {
+    box-shadow:
+        0 10px 35px rgba(255,120,180,.3);
 }
 
 .mensaje-secreto {
@@ -414,7 +424,9 @@ button {
     .foto {
         max-width: 92vw;
     }
+
 }
+
 </style>
 </head>
 
@@ -427,19 +439,40 @@ button {
 
 <div class="corazones">
 
-    <div class="corazon-flotante" style="left:5%; animation-delay:0s; font-size:18px;">❤️</div>
+    <div class="corazon-flotante"
+         style="left:5%; animation-delay:0s; font-size:18px;">
+         ❤️
+    </div>
 
-    <div class="corazon-flotante" style="left:18%; animation-delay:2s; font-size:25px;">💗</div>
+    <div class="corazon-flotante"
+         style="left:18%; animation-delay:2s; font-size:25px;">
+         💗
+    </div>
 
-    <div class="corazon-flotante" style="left:32%; animation-delay:4s; font-size:16px;">💕</div>
+    <div class="corazon-flotante"
+         style="left:32%; animation-delay:4s; font-size:16px;">
+         💕
+    </div>
 
-    <div class="corazon-flotante" style="left:47%; animation-delay:1s; font-size:22px;">❤️</div>
+    <div class="corazon-flotante"
+         style="left:47%; animation-delay:1s; font-size:22px;">
+         ❤️
+    </div>
 
-    <div class="corazon-flotante" style="left:63%; animation-delay:3s; font-size:17px;">💗</div>
+    <div class="corazon-flotante"
+         style="left:63%; animation-delay:3s; font-size:17px;">
+         💗
+    </div>
 
-    <div class="corazon-flotante" style="left:78%; animation-delay:5s; font-size:25px;">💕</div>
+    <div class="corazon-flotante"
+         style="left:78%; animation-delay:5s; font-size:25px;">
+         💕
+    </div>
 
-    <div class="corazon-flotante" style="left:92%; animation-delay:2.5s; font-size:19px;">❤️</div>
+    <div class="corazon-flotante"
+         style="left:92%; animation-delay:2.5s; font-size:19px;">
+         ❤️
+    </div>
 
 </div>
 
@@ -448,23 +481,47 @@ button {
      PÉTALOS
 ========================= -->
 
-<div class="petalos">
+<div>
 
-    <div class="petalo" style="left:5%; animation-duration:10s; animation-delay:0s;">🌹</div>
+    <div class="petalo"
+         style="left:5%; animation-duration:10s; animation-delay:0s;">
+         🌹
+    </div>
 
-    <div class="petalo" style="left:17%; animation-duration:13s; animation-delay:3s;">🌸</div>
+    <div class="petalo"
+         style="left:17%; animation-duration:13s; animation-delay:3s;">
+         🌸
+    </div>
 
-    <div class="petalo" style="left:29%; animation-duration:11s; animation-delay:5s;">🌹</div>
+    <div class="petalo"
+         style="left:29%; animation-duration:11s; animation-delay:5s;">
+         🌹
+    </div>
 
-    <div class="petalo" style="left:42%; animation-duration:14s; animation-delay:1s;">🌸</div>
+    <div class="petalo"
+         style="left:42%; animation-duration:14s; animation-delay:1s;">
+         🌸
+    </div>
 
-    <div class="petalo" style="left:55%; animation-duration:12s; animation-delay:6s;">🌹</div>
+    <div class="petalo"
+         style="left:55%; animation-duration:12s; animation-delay:6s;">
+         🌹
+    </div>
 
-    <div class="petalo" style="left:68%; animation-duration:10s; animation-delay:2s;">🌸</div>
+    <div class="petalo"
+         style="left:68%; animation-duration:10s; animation-delay:2s;">
+         🌸
+    </div>
 
-    <div class="petalo" style="left:80%; animation-duration:13s; animation-delay:4s;">🌹</div>
+    <div class="petalo"
+         style="left:80%; animation-duration:13s; animation-delay:4s;">
+         🌹
+    </div>
 
-    <div class="petalo" style="left:94%; animation-duration:11s; animation-delay:7s;">🌸</div>
+    <div class="petalo"
+         style="left:94%; animation-duration:11s; animation-delay:7s;">
+         🌸
+    </div>
 
 </div>
 
@@ -475,21 +532,45 @@ button {
 
 <div class="destellos">
 
-    <div class="destello" style="left:8%; top:18%; animation-delay:0s;">✦</div>
+    <div class="destello"
+         style="left:8%; top:18%; animation-delay:0s;">
+         ✦
+    </div>
 
-    <div class="destello" style="left:25%; top:38%; animation-delay:1s;">✨</div>
+    <div class="destello"
+         style="left:25%; top:38%; animation-delay:1s;">
+         ✨
+    </div>
 
-    <div class="destello" style="left:48%; top:15%; animation-delay:2s;">✦</div>
+    <div class="destello"
+         style="left:48%; top:15%; animation-delay:2s;">
+         ✦
+    </div>
 
-    <div class="destello" style="left:72%; top:30%; animation-delay:.5s;">✨</div>
+    <div class="destello"
+         style="left:72%; top:30%; animation-delay:.5s;">
+         ✨
+    </div>
 
-    <div class="destello" style="left:88%; top:55%; animation-delay:1.5s;">✦</div>
+    <div class="destello"
+         style="left:88%; top:55%; animation-delay:1.5s;">
+         ✦
+    </div>
 
-    <div class="destello" style="left:15%; top:72%; animation-delay:2.5s;">✨</div>
+    <div class="destello"
+         style="left:15%; top:72%; animation-delay:2.5s;">
+         ✨
+    </div>
 
-    <div class="destello" style="left:58%; top:80%; animation-delay:1.2s;">✦</div>
+    <div class="destello"
+         style="left:58%; top:80%; animation-delay:1.2s;">
+         ✦
+    </div>
 
-    <div class="destello" style="left:82%; top:85%; animation-delay:3s;">✨</div>
+    <div class="destello"
+         style="left:82%; top:85%; animation-delay:3s;">
+         ✨
+    </div>
 
 </div>
 
@@ -500,7 +581,9 @@ button {
 
 <section class="inicio">
 
-    <div class="corazon-grande">❤️</div>
+    <div class="corazon-grande">
+        ❤️
+    </div>
 
     <h1>
         Feliz cumpleaños,<br>
@@ -527,7 +610,11 @@ button {
 
 <section class="mensaje" id="mensaje">
 
-    <img src="IMG_0517.jpeg" class="foto foto-inclinada">
+    <img
+        src="IMG_0517.jpeg"
+        class="foto foto-inclinada"
+        alt="Para Dayi ❤️"
+    >
 
     <p>
 
@@ -570,9 +657,15 @@ button {
 
 <section class="seccion-amor">
 
-    <h2>💗 Cosas que amo de ti</h2>
+    <h2>
+        💗 Cosas que amo de ti
+    </h2>
 
-    <img src="IMG_0519.jpeg" class="foto foto-inclinada2">
+    <img
+        src="IMG_0519.jpeg"
+        class="foto foto-inclinada2"
+        alt="Dayi ❤️"
+    >
 
     <div class="tarjetas">
 
@@ -619,16 +712,23 @@ button {
 
 <section>
 
-    <h2>💌 Para cuando me extrañes</h2>
+    <h2>
+        💌 Para cuando me extrañes
+    </h2>
 
-    <img src="IMG_0508.jpeg" class="foto">
+    <img
+        src="IMG_0508.jpeg"
+        class="foto"
+        alt="❤️"
+    >
 
     <p>
         Abre uno cuando necesites un poquito de amor de Isaquito. ❤️
     </p>
 
 
-    <div class="sobre" onclick="this.classList.toggle('abierto')">
+    <div class="sobre"
+         onclick="this.classList.toggle('abierto')">
 
         💌 Ábreme cuando me extrañes
 
@@ -641,7 +741,8 @@ button {
     </div>
 
 
-    <div class="sobre" onclick="this.classList.toggle('abierto')">
+    <div class="sobre"
+         onclick="this.classList.toggle('abierto')">
 
         💋 Ábreme cuando quieras un beso
 
@@ -654,7 +755,8 @@ button {
     </div>
 
 
-    <div class="sobre" onclick="this.classList.toggle('abierto')">
+    <div class="sobre"
+         onclick="this.classList.toggle('abierto')">
 
         🫂 Ábreme cuando quieras un abracito
 
@@ -675,13 +777,19 @@ button {
 
 <section class="distancia">
 
-    <h2>🌎 Aunque estemos lejos</h2>
+    <h2>
+        🌎 Aunque estemos lejos
+    </h2>
 
     <div class="mapa-corazon">
         🇲🇽 ❤️ 🇪🇨
     </div>
 
-    <img src="IMG_0513.jpeg" class="foto foto-inclinada">
+    <img
+        src="IMG_0513.jpeg"
+        class="foto foto-inclinada"
+        alt="México ❤️ Ecuador"
+    >
 
     <p>
 
@@ -704,9 +812,15 @@ button {
 
 <section class="futuro">
 
-    <h2>🎁 Lo que quiero vivir contigo</h2>
+    <h2>
+        🎁 Lo que quiero vivir contigo
+    </h2>
 
-    <img src="IMG_0515.jpeg" class="foto foto-inclinada2">
+    <img
+        src="IMG_0515.jpeg"
+        class="foto foto-inclinada2"
+        alt="Nuestros sueños ❤️"
+    >
 
     <div class="tarjetas">
 
@@ -745,7 +859,11 @@ button {
 
 <section class="final">
 
-    <img src="IMG_0522.jpeg" class="foto">
+    <img
+        src="IMG_0522.jpeg"
+        class="foto"
+        alt="Para Dayi ❤️"
+    >
 
     <div class="corazon-grande">
         ❤️
@@ -793,37 +911,38 @@ button {
    ANIMACIÓN DE LAS FOTOS
 ========================= */
 
-const fotos = document.querySelectorAll('.foto');
+const fotos = document.querySelectorAll(".foto");
 
-const observador = new IntersectionObserver(
+function mostrarFotos() {
 
-    (entradas) => {
+    fotos.forEach(function(foto) {
 
-        entradas.forEach((entrada) => {
+        const posicion = foto.getBoundingClientRect();
 
-            if (entrada.isIntersecting) {
+        if (posicion.top < window.innerHeight * 0.85) {
 
-                entrada.target.classList.add('visible');
+            foto.classList.add("visible");
 
-            }
+        }
 
-        });
+    });
 
-    },
+}
 
-    {
-        threshold: 0.2
-    }
+/* Ejecutar al cargar */
 
-);
+mostrarFotos();
 
-fotos.forEach((foto) => {
+/* Ejecutar al deslizar */
 
-    observador.observe(foto);
+window.addEventListener("scroll", mostrarFotos);
 
-});
+/* Ejecutar al cambiar tamaño */
+
+window.addEventListener("resize", mostrarFotos);
 
 </script>
+
 
 </body>
 </html>
