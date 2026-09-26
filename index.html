@@ -1,328 +1,513 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Dayi ❤️</title>
 
-    <title>Para Dayi ❤️</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Georgia, serif;
-            background: #12070d;
-            color: white;
-            overflow-x: hidden;
-        }
+body {
+    font-family: Georgia, serif;
+    background: #12060c;
+    color: white;
+    overflow-x: hidden;
+}
 
-        section {
-            min-height: 100vh;
-            padding: 60px 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+section {
+    min-height: 100vh;
+    padding: 70px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
 
-        .inicio {
-            background: radial-gradient(circle, #5c1833, #12070d 70%);
-        }
+h1 {
+    font-size: clamp(38px, 10vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+h2 {
+    font-size: clamp(30px, 8vw, 45px);
+    margin-bottom: 25px;
+}
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
+p {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.8;
+}
 
-        p {
-            font-size: 20px;
-            line-height: 1.7;
-            max-width: 600px;
-        }
+button {
+    font-family: Georgia, serif;
+}
 
-        .corazon {
-            font-size: 80px;
-            animation: latido 1.3s infinite;
-            margin-bottom: 25px;
-        }
+/* CORAZONES FLOTANDO */
 
-        @keyframes latido {
-            0%, 100% {
-                transform: scale(1);
-            }
+.corazones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
 
-            50% {
-                transform: scale(1.18);
-            }
-        }
+.corazon-flotante {
+    position: absolute;
+    bottom: -50px;
+    animation: subir 8s linear infinite;
+    opacity: .7;
+}
 
-        .boton {
-            margin-top: 35px;
-            padding: 15px 28px;
-            border: none;
-            border-radius: 30px;
-            background: #ff477e;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 71, 126, .5);
-        }
+@keyframes subir {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
 
-        .mensaje {
-            background: linear-gradient(#210b15, #4a1329);
-        }
+    15% {
+        opacity: .7;
+    }
 
-        .tarjetas {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            max-width: 600px;
-            width: 100%;
-            margin-top: 25px;
-        }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
 
-        .tarjeta {
-            background: rgba(255,255,255,.08);
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 20px;
-            padding: 25px 15px;
-            min-height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            backdrop-filter: blur(5px);
-        }
+/* PORTADA */
 
-        .distancia {
-            background: radial-gradient(circle, #32152b, #10070c);
-        }
+.inicio {
+    background:
+        radial-gradient(circle at center, #7b1e45 0%, #321020 40%, #10050b 80%);
+    overflow: hidden;
+}
 
-        .futuro {
-            background: linear-gradient(#14080e, #321020);
-        }
+.corazon-grande {
+    font-size: 90px;
+    animation: latido 1.4s infinite;
+    margin-bottom: 20px;
+}
 
-        .final {
-            background: radial-gradient(circle, #681b3a, #10060b 70%);
-        }
+@keyframes latido {
+    0%,100% {
+        transform: scale(1);
+    }
 
-        .firma {
-            margin-top: 35px;
-            font-size: 24px;
-            color: #ff9fbd;
-        }
+    50% {
+        transform: scale(1.15);
+    }
+}
 
-        .flecha {
-            margin-top: 40px;
-            font-size: 30px;
-            animation: subir 1.5s infinite;
-        }
+.subtitulo {
+    color: #ffc1d5;
+    font-size: 20px;
+}
 
-        @keyframes subir {
-            0%, 100% {
-                transform: translateY(0);
-            }
+.boton {
+    margin-top: 35px;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 40px;
+    background: #ff4f86;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 25px rgba(255,79,134,.5);
+    cursor: pointer;
+    transition: transform .3s;
+}
 
-            50% {
-                transform: translateY(10px);
-            }
-        }
+.boton:active {
+    transform: scale(.95);
+}
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 34px;
-            }
+/* FOTOS */
 
-            h2 {
-                font-size: 28px;
-            }
+.foto {
+    width: min(88vw, 430px);
+    border-radius: 25px;
+    margin: 25px 0;
+    box-shadow: 0 15px 45px rgba(0,0,0,.55);
+    border: 4px solid rgba(255,255,255,.15);
+}
 
-            p {
-                font-size: 18px;
-            }
+.foto-inclinada {
+    transform: rotate(-3deg);
+}
 
-            .tarjetas {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.foto-inclinada2 {
+    transform: rotate(3deg);
+}
+
+/* MENSAJE */
+
+.mensaje {
+    background: linear-gradient(#210914, #4a1429);
+}
+
+.firma {
+    margin-top: 30px;
+    font-size: 25px;
+    color: #ffadc6;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    width: min(650px, 100%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tarjeta {
+    min-height: 120px;
+    padding: 25px 15px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    backdrop-filter: blur(8px);
+    transition: transform .3s, background .3s;
+}
+
+.tarjeta:active {
+    transform: scale(.95);
+    background: rgba(255,79,134,.25);
+}
+
+/* EXTRA */
+
+.seccion-amor {
+    background: radial-gradient(circle, #46152c, #13070d);
+}
+
+/* SOBRES */
+
+.sobre {
+    width: min(330px, 90vw);
+    padding: 30px 20px;
+    margin: 12px;
+    border-radius: 20px;
+    background: #fff0f5;
+    color: #4b1329;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    transition: transform .3s;
+}
+
+.sobre:active {
+    transform: scale(.95);
+}
+
+.mensaje-secreto {
+    display: none;
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.sobre.abierto .mensaje-secreto {
+    display: block;
+}
+
+/* DISTANCIA */
+
+.distancia {
+    background:
+        radial-gradient(circle at 50% 30%, #44213d, #10060c 75%);
+}
+
+.mapa-corazon {
+    font-size: 65px;
+    margin: 30px;
+    animation: latido 1.8s infinite;
+}
+
+/* FUTURO */
+
+.futuro {
+    background: linear-gradient(#14070d, #381123);
+}
+
+/* FINAL */
+
+.final {
+    background:
+        radial-gradient(circle, #8b2250, #210812 75%);
+}
+
+.final .corazon-grande {
+    font-size: 110px;
+}
+
+@media(max-width:600px) {
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .foto {
+        max-width: 92vw;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- PORTADA -->
-    <section class="inicio">
+<!-- CORAZONES -->
+<div class="corazones">
 
-        <div class="corazon">❤️</div>
+    <div class="corazon-flotante" style="left:10%; animation-delay:0s;">❤️</div>
+    <div class="corazon-flotante" style="left:30%; animation-delay:2s;">💗</div>
+    <div class="corazon-flotante" style="left:50%; animation-delay:4s;">💕</div>
+    <div class="corazon-flotante" style="left:70%; animation-delay:1s;">❤️</div>
+    <div class="corazon-flotante" style="left:90%; animation-delay:3s;">💗</div>
 
-        <h1>Feliz cumpleaños,<br>mi amor</h1>
-
-        <p>
-            Para la niña más bonita del mundo.
-        </p>
-
-        <button class="boton" onclick="document.getElementById('mensaje').scrollIntoView({behavior:'smooth'})">
-            💗 Abrir mi regalo
-        </button>
-
-        <div class="flecha">↓</div>
-
-    </section>
+</div>
 
 
-    <!-- MENSAJE -->
-    <section class="mensaje" id="mensaje">
+<!-- PORTADA -->
 
-        <h2>💌 Para mi niña linda</h2>
+<section class="inicio">
 
-        <p>
-            Feliz cumpleaños, mi niña linda. ❤️
-            <br><br>
+    <div class="corazon-grande">❤️</div>
 
-            Me pone muy feliz tenerte otro añito más conmigo. 🥰
-            Te amo muchísimo y nunca me cansaré de recordártelo:
-            eres el amor de mi vida. 🥰🥰
-            <br><br>
+    <h1>
+        Feliz cumpleaños,<br>
+        mi amor
+    </h1>
 
-            Te adoro con todo mi corazón. 💗
-            Espero que ya pronto podamos estar cerquita para llenarte
-            de besitos esa hermosa carita. 😘
-            <br><br>
+    <p class="subtitulo">
+        Para mi niña linda, Dayi 🥰
+    </p>
 
-            Siempre serás mi linda princesa. ❤️
-        </p>
+    <button class="boton"
+        onclick="document.getElementById('mensaje').scrollIntoView({behavior:'smooth'})">
+        💗 Abrir mi regalo
+    </button>
 
-        <div class="firma">
-            Te amo muchísimo, Dayi ❤️<br>
-            — Isaquito
+</section>
+
+
+<!-- MENSAJE -->
+
+<section class="mensaje" id="mensaje">
+
+    <h2>💌 Para mi niña linda</h2>
+
+    <img src="IMG_0517.jpeg" class="foto foto-inclinada">
+
+    <p>
+        Feliz cumpleaños, mi niña linda. ❤️
+        <br><br>
+
+        Me pone muy feliz tenerte otro añito más conmigo.
+        🥰 Te amo muchísimo y nunca me cansaré de recordártelo:
+        eres el amor de mi vida. 🥰🥰
+        <br><br>
+
+        Te adoro con todo mi corazón. 💗
+        Espero que ya pronto podamos estar cerquita
+        para llenarte de besitos esa hermosa carita. 😘
+        <br><br>
+
+        Siempre serás mi linda princesa. ❤️
+    </p>
+
+    <div class="firma">
+        Te amo muchísimo, Dayi ❤️
+        <br>
+        — Isaquito
+    </div>
+
+</section>
+
+
+<!-- COSAS QUE AMO -->
+
+<section class="seccion-amor">
+
+    <h2>💗 Cosas que amo de ti</h2>
+
+    <img src="IMG_0519.jpeg" class="foto foto-inclinada2">
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">Tu hermosa sonrisa ❤️</div>
+
+        <div class="tarjeta">La forma en que me haces sentir 🥰</div>
+
+        <div class="tarjeta">Tu manera de quererme 💗</div>
+
+        <div class="tarjeta">Lo bonita que eres conmigo 🫶</div>
+
+        <div class="tarjeta">Cada momento contigo 💕</div>
+
+        <div class="tarjeta">Simplemente... tú ❤️</div>
+
+    </div>
+
+</section>
+
+
+<!-- PARA CUANDO ME EXTRAÑES -->
+
+<section>
+
+    <h2>💌 Para cuando me extrañes</h2>
+
+    <img src="IMG_0508.jpeg" class="foto">
+
+    <p>
+        Abre uno cuando necesites un poquito de amor de Isaquito. ❤️
+    </p>
+
+    <div class="sobre" onclick="this.classList.toggle('abierto')">
+
+        💌 Ábreme cuando me extrañes
+
+        <div class="mensaje-secreto">
+            Cierra los ojitos y piensa que estoy cerquita de ti,
+            dándote un abrazo enorme y muchos besitos. 🥰❤️
         </div>
 
-    </section>
+    </div>
 
+    <div class="sobre" onclick="this.classList.toggle('abierto')">
 
-    <!-- COSAS QUE AMO -->
-    <section>
+        💋 Ábreme cuando quieras un beso
 
-        <h2>💗 Cosas que amo de ti</h2>
-
-        <div class="tarjetas">
-
-            <div class="tarjeta">Tu hermosa sonrisa ❤️</div>
-
-            <div class="tarjeta">La forma en que me haces sentir 🥰</div>
-
-            <div class="tarjeta">Tu manera de quererme 💗</div>
-
-            <div class="tarjeta">Lo bonita que eres conmigo 🫶</div>
-
-            <div class="tarjeta">Cada momento contigo 💕</div>
-
-            <div class="tarjeta">Simplemente... tú ❤️</div>
-
+        <div class="mensaje-secreto">
+            Muak muak muak. 😘😘😘
+            Estos son solo unos poquitos de los millones
+            que te quiero dar cuando estemos juntos.
         </div>
 
-    </section>
+    </div>
 
+    <div class="sobre" onclick="this.classList.toggle('abierto')">
 
-    <!-- PARA CUANDO ME EXTRAÑES -->
-    <section>
+        🫂 Ábreme cuando necesites un abrazo
 
-        <h2>💌 Para cuando me extrañes</h2>
-
-        <p>
-            Si algún día me extrañas mucho,
-            recuerda que aquí hay alguien que también
-            está contando los días para poder estar contigo.
-        </p>
-
-        <div class="tarjetas">
-
-            <div class="tarjeta">💌 Un abrazo</div>
-
-            <div class="tarjeta">💋 Un besito</div>
-
-            <div class="tarjeta">🫂 Un apapacho</div>
-
-            <div class="tarjeta">❤️ Todo mi amor</div>
-
+        <div class="mensaje-secreto">
+            Ven acá, mi niña.
+            Este abrazo es completamente tuyo. 🫂❤️
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- DISTANCIA -->
-    <section class="distancia">
+<!-- DISTANCIA -->
 
-        <h2>🌎 Aunque estemos lejos</h2>
+<section class="distancia">
 
-        <p>
-            Puede haber muchos kilómetros entre nosotros,
-            pero eso nunca va a cambiar lo mucho que te amo.
-            ❤️
-            <br><br>
+    <h2>🌎 Aunque estemos lejos</h2>
 
-            Espero que ya pronto podamos estar cerquita
-            para llenarte de besitos esa hermosa carita. 😘
-        </p>
+    <div class="mapa-corazon">
+        🇲🇽 ❤️ 🇪🇨
+    </div>
 
-    </section>
+    <img src="IMG_0513.jpeg" class="foto foto-inclinada">
 
+    <p>
+        Puede haber muchos kilómetros entre nosotros,
+        pero eso nunca va a cambiar lo mucho que te amo. ❤️
+        <br><br>
 
-    <!-- FUTURO -->
-    <section class="futuro">
+        Espero ya pronto podamos estar cerquita
+        para llenarte de besitos esa hermosa carita. 😘
+    </p>
 
-        <h2>🎁 Lo que quiero vivir contigo</h2>
-
-        <div class="tarjetas">
-
-            <div class="tarjeta">✈️ Viajar juntos</div>
-
-            <div class="tarjeta">🌅 Ver muchos atardeceres contigo</div>
-
-            <div class="tarjeta">🍿 Tener noches de películas</div>
-
-            <div class="tarjeta">🥰 Crear muchísimos recuerdos</div>
-
-            <div class="tarjeta">🌎 Conocer lugares juntos</div>
-
-            <div class="tarjeta">❤️ Seguir creciendo juntos</div>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- FINAL -->
-    <section class="final">
+<!-- FUTURO -->
 
-        <div class="corazon">❤️</div>
+<section class="futuro">
 
-        <h2>Siempre serás mi linda princesa</h2>
+    <h2>🎁 Lo que quiero vivir contigo</h2>
 
-        <p>
-            Gracias por existir y por formar parte de mi vida.
-            <br><br>
+    <img src="IMG_0515.jpeg" class="foto foto-inclinada2">
 
-            Te amo muchísimo más de lo que estas palabras
-            pueden explicar.
-        </p>
+    <div class="tarjetas">
 
-        <div class="firma">
-            Con todo mi amor,<br>
-            Isaquito ❤️
-        </div>
+        <div class="tarjeta">✈️ Viajar juntos</div>
 
-    </section>
+        <div class="tarjeta">🌅 Ver muchos atardeceres contigo</div>
+
+        <div class="tarjeta">🍿 Tener noches de películas</div>
+
+        <div class="tarjeta">🥰 Crear muchísimos recuerdos</div>
+
+        <div class="tarjeta">🌎 Conocer lugares juntos</div>
+
+        <div class="tarjeta">❤️ Seguir creciendo juntos</div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <img src="IMG_0522.jpeg" class="foto">
+
+    <div class="corazon-grande">
+        ❤️
+    </div>
+
+    <h2>
+        Siempre serás<br>
+        mi linda princesa
+    </h2>
+
+    <p>
+        Gracias por existir y por formar parte de mi vida.
+        <br><br>
+
+        Te amo muchísimo más de lo que estas palabras
+        pueden explicar.
+        <br><br>
+
+        Espero que este pequeño regalo te recuerde
+        lo especial que eres para mí.
+    </p>
+
+    <div class="firma">
+        Con todo mi amor,
+        <br>
+        Isaquito ❤️
+    </div>
+
+</section>
 
 </body>
 </html>
