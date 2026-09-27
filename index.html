@@ -382,7 +382,140 @@ button {
     margin: 30px;
     animation: latido 1.8s infinite;
 }
+/* =========================
+   MÉXICO ❤️ ECUADOR
+========================= */
 
+.distancia-animada {
+    width: min(700px, 95vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.pais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 55px;
+    min-width: 80px;
+}
+
+.pais span {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #ffc1d5;
+}
+
+.camino {
+    flex: 1;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.camino::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 2px dashed rgba(255,255,255,.45);
+}
+
+.avion {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 35px;
+    z-index: 2;
+    animation: viajar 4s ease-in-out infinite;
+}
+
+@keyframes viajar {
+
+    0% {
+        left: 0;
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    45% {
+        left: 100%;
+        transform: translate(-100%, -50%) rotate(0deg);
+    }
+
+    50% {
+        left: 100%;
+        transform: translate(-100%, -50%) rotate(180deg);
+    }
+
+    95% {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    100% {
+        left: 0;
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.corazon-camino {
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    animation: corazon-brilla 1.5s ease-in-out infinite;
+}
+
+.corazon-camino:last-child {
+    animation-delay: .7s;
+}
+
+@keyframes corazon-brilla {
+
+    0%, 100% {
+        transform: scale(.8);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+
+/* En celulares */
+
+@media(max-width:600px) {
+
+    .distancia-animada {
+        gap: 8px;
+    }
+
+    .pais {
+        font-size: 42px;
+        min-width: 55px;
+    }
+
+    .pais span {
+        font-size: 14px;
+    }
+
+    .avion {
+        font-size: 28px;
+    }
+
+    .corazon-camino {
+        font-size: 14px;
+    }
+
+}
 
 /* =========================
    FUTURO
@@ -781,9 +914,31 @@ button {
         🌎 Aunque estemos lejos
     </h2>
 
-    <div class="mapa-corazon">
-        🇲🇽 ❤️ 🇪🇨
+    <div class="distancia-animada">
+
+    <div class="pais">
+        🇲🇽
+        <span>México</span>
     </div>
+
+    <div class="camino">
+
+        <div class="corazon-camino">❤️</div>
+
+        <div class="avion">
+            ✈️
+        </div>
+
+        <div class="corazon-camino">💕</div>
+
+    </div>
+
+    <div class="pais">
+        🇪🇨
+        <span>Ecuador</span>
+    </div>
+
+</div>
 
     <img
         src="IMG_0513.jpeg"
